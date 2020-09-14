@@ -1,0 +1,30 @@
+{% extends "model-page.html"%}
+
+{% block content %}
+  <h1>Clientes</h1>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Telefone</th>
+        <th>email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for customer in customer_list %}
+        <tr>        
+          <td>{{ customer.first_name}}</td>
+          <td>{{ customer.city }}</td>
+          <td>{{ customer.phone_number }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.active }}</td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
